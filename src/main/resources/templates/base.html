@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" th:fragmnet = "parent" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" th:fragmnet = "parent(content,title,script)" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Page</title>
+    <title data-th-replace="${title}">Base Page</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" 
         rel = "stylesheet">
@@ -12,5 +12,12 @@
 </head>
 <body>
     <h1>This is base page for Thymleafe fragemnet basic concept.</h1>
+    <!--  Main Content  -->
+
+    <section data-th-replace="${content}" </section>
+
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <th:block data-th-replace="${script}"></th:block>
 </body>
 </html>
